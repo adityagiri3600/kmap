@@ -1,8 +1,12 @@
-mod kmap;
 mod group;
+mod kmap;
+mod cli;
+use clap::Parser;
+use cli::Cli;
 use kmap::Kmap;
 
 fn main() {
-    let kmap = Kmap::new(4, vec![0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+    let args = Cli::parse();
+    let kmap = Kmap::new(args.number_of_variables, args.minterms);
     kmap.print_solution();
 }
