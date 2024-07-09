@@ -78,6 +78,7 @@ impl Kmap {
         groups
     }
 
+    #[allow(dead_code)]
     pub fn print_solution(&self) {
         let groups = self.solve();
         print!("F = {}", groups[0].expression());

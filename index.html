@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>kmap</title>
+  </head>
+  <body>
+    <script type="module">
+      import init, { solve_kmap } from "./pkg/kmap.js";
+      init().then(() => {
+        alert(solve_kmap(4, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+      });
+    </script>
+  </body>
+</html>
