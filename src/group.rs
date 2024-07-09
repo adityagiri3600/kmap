@@ -3,7 +3,7 @@ use std::vec;
 pub struct Group {
     pub minterms: Vec<u32>,
     #[allow(dead_code)]
-    variables: Vec<u8>,
+    pub variables: Vec<u8>,
 }
 
 impl Group {
@@ -41,5 +41,29 @@ impl Group {
             minterms,
             variables,
         }
+    }
+
+    pub fn clone(&self) -> Group {
+        Group {
+            minterms: self.minterms.clone(),
+            variables: self.variables.clone(),
+        }
+    }
+
+    pub fn expression(&self) -> String {
+        let mut expression = String::new();
+        for i in 0..self.variables.len() {
+            match self.variables[i] {
+                1 => {
+                    expression.push((65 + i as u8) as char);
+                }
+                2 => {
+                    expression.push((65 + i as u8) as char);
+                    expression.push('\'');
+                }
+                _ => {}
+            }
+        }
+        expression
     }
 }
