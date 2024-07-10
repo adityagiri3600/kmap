@@ -12,13 +12,13 @@ fn main() {
     {
         let kmap = Kmap::new(args.number_of_variables, args.minterms);
         println!();
-        kmap.print_solution();
+        println!("\x1b[104m{}\x1b[0m",kmap.expression());
     }
     let duration = start.elapsed();
     println!(
-        "\nTotal {} groups, found solution out of 10^{:0.2} possible",
+        "\nTotal \x1b[91m{}\x1b[0m groups, found solution out of \x1b[91m10^{:0.2}\x1b[0m possible",
         3_usize.pow(args.number_of_variables as u32),
         (3_usize.pow(args.number_of_variables as u32) as f64) * 0.30102999566
     );
-    println!("Took {:?}", duration);
+    println!("Took \x1b[91m{:?}\x1b[0m", duration);
 }

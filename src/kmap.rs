@@ -79,12 +79,13 @@ impl Kmap {
     }
 
     #[allow(dead_code)]
-    pub fn print_solution(&self) {
+    pub fn expression(&self) -> String {
         let groups = self.solve();
-        print!("F = {}", groups[0].expression());
+        let mut solution = String::new();
+        solution.push_str(&format!("F = {}", groups[0].expression()));
         for group in groups.iter().skip(1) {
-            print!(" + {}", group.expression());
+            solution.push_str(&format!(" + {}", group.expression()));
         }
-        println!();
+        solution
     }
 }
