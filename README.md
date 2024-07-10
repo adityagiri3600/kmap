@@ -1,5 +1,5 @@
 # kmap
-A command line tool to process k-maps 🧩
+A command line tool to process k-maps ***BLAZINGLY FAST*** ⚡
 
 ## Usage
 ```
