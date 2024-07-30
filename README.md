@@ -33,3 +33,4 @@ F = A'B'C'D'E' + A'B'C'D'F' + ABC'DE'F
 Total 729 groups, found solution out of 10^219.45 possible
 Took 325.738µs
 ```
+![Time Analysis](https://github.com/adityagiri3600/kmap/blob/master/time%20analysis.png)
